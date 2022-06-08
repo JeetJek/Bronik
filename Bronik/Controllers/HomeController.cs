@@ -6,15 +6,17 @@ namespace Bronik.Controllers
     public class HomeController : Controller
     {
         private Worker worker=new Worker();
+        [Route("/")]
         public IActionResult Index()
         {
             ViewBag.Tables = worker.GetTables();
-            return View();
+            return View("~/Views/Home/index.cshtml");
         }
-        public IActionResult Book(int id,string Name,int Clients, string Num)
+        [Route("/Book")]
+        public IActionResult Book(int id,string Name,int Clients, int number,string tel)
         {
             worker.SetTable(id, Name);
-            return View("~/Views/Home/Index.cshtml");
+            return Index();
         }
     }
 }

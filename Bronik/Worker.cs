@@ -46,6 +46,7 @@ public class Worker
     }
     public void SetTable(int id,string name)
     {
+        Execute("update tables set state="+1+" where num="+id+";");
         Console.WriteLine($"Стол {id} забронирован {name}");
     }
     public void SetTable(int id, string name,DateTime date)
