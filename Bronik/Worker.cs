@@ -20,6 +20,10 @@ public class Worker
         }
         return tables;
     }
+    public void CloseTable(int table)
+    {
+        Execute("");
+    }
     
     public void SetupTables(int tables)
     {
@@ -44,10 +48,19 @@ public class Worker
             connection.Close(); 
         }
     }
-    public void SetTable(int id,string name)
+    public void OpenTable(int num,string name,int clients,string tel,DateTime date)
     {
-        Execute("update tables set state="+1+" where num="+id+";");
-        Console.WriteLine($"Стол {id} забронирован {name}");
+        Execute("update tables set state="+1+" where num="+num+";");
+        SQLiteCommand cmd = new SQLiteCommand();
+        cmd.CommandText = "insert into booking(table,fio,num,date,tel) value (@table,@fio,@num,@date,@tel);";
+        cmd.Parameters.AddWithValue("@table", num);
+        cmd.Parameters.AddWithValue("@fio", name);
+        cmd.Parameters.AddWithValue("@num", clients);
+        cmd.Parameters.AddWithValue("@date", date);
+        cmd.Parameters.AddWithValue("@tel", tel);
+        Console.WriteLine(cmd.CommandText);
+        Execute(cmd);
+        Console.WriteLine($"Стол {num} забронирован {name}");
     }
     public void SetTable(int id, string name,DateTime date)
     {
@@ -63,6 +76,25 @@ public class Worker
         {
             cmd.CommandText = command;
             res.Load(cmd.ExecuteReader());
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка при работе с БД: " + ex.ToString());
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return res;
+    }
+    public DataTable Execute(SQLiteCommand command)
+    {
+        DataTable res = new DataTable();
+        command.Connection = connection;
+        connection.Open();
+        try
+        {
+            res.Load(command.ExecuteReader());
         }
         catch (Exception ex)
         {
