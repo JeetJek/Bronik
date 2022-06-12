@@ -1,22 +1,20 @@
 ﻿namespace Bronik
 {
-    public class Table
+    public class Desk
     {
         public int id;
         public bool booked;
-        DateTime from;
-        string name="";
-        string phone="";
-        public Table(int id)
+        
+        public Desk(int id)
         {
             this.booked= false;
             this.id = id;
         }
-        public Table(int id, bool booked) : this(id)
+        public Desk(int id, bool booked) : this(id)
         {
             this.booked = booked;
         }
-        public Table(int id, bool booked, DateTime from, string name, string phone) : this(id)
+        public Desk(int id, bool booked, DateTime from, string name, string phone) : this(id)
         {
             this.booked = booked;
             this.from = from;

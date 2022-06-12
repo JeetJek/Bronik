@@ -15,7 +15,7 @@ namespace Bronik.Controllers
         [Route("/Book")]
         public IActionResult Book(int id,string Name, int number,string tel)
         {
-            worker.OpenTable(id, Name, number, tel,DateTime.Now);
+            worker.OpenDesk(id, Name, number, tel,DateTime.Now);
             return Index();
         }
     }
