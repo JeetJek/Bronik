@@ -61,7 +61,7 @@
                         <p>Вместимость: 6 человек</p>
                         <p>Состояние стола:
                         @{
-                            if (ViewBag.Tables[0].orders>1)
+                            if (ViewBag.Tables[0].orders.Count>=1)
                             {
                                     <text>Занято</text>
                             }
@@ -92,8 +92,9 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 6 человек</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[1].booked == true)
+                        <p>Состояние стола:
+                             @{
+                            if (ViewBag.Tables[0].orders.Count>=1)
                             {
                                     <text>Занято</text>
                             }
@@ -124,8 +125,8 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 6 человек</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[2].booked == true)
+                        <p>Состояние стола: @{
+                            if (ViewBag.Tables[0].orders.Count>=1)
                             {
                                     <text>Занято</text>
                             }
@@ -156,16 +157,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 8 человек</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[3].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
@@ -188,16 +180,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 4 человека</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[4].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
@@ -220,16 +203,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 4 человека</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[5].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <form action="/Book">
                                 <input type="hidden" name="id" value="6" />
                             <p> Введите ваше имя:
@@ -255,16 +229,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 4 человека</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[6].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
@@ -287,16 +252,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 2 человека</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[7].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
@@ -319,16 +275,7 @@
                     <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                     <div class="infowindow_text">
                         <p>Вместимость: 2 человека</p>
-                        <p>Состояние стола:@{
-                            if (ViewBag.Tables[8].booked == true)
-                            {
-                                    <text>Занято</text>
-                            }
-                            else
-                            {
-                                    <text>Свободно</text>
-                            }
-                        }</p>
+                        <p>Состояние стола:<text>Свободно</text></p>
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
