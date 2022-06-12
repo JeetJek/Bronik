@@ -1,5 +1,5 @@
 select 
-	max(oh.id) as 'ID',
+	oh.id as 'ID',
 	oh.full_name as 'ФИО',
 	oh.quantity as 'Человек',
 	oh.'from' as 'С',

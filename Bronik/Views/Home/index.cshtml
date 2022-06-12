@@ -61,7 +61,7 @@
                         <p>Вместимость: 6 человек</p>
                         <p>Состояние стола:
                         @{
-                            if (ViewBag.Tables[0].booked == true)
+                            if (ViewBag.Tables[0].orders>1)
                             {
                                     <text>Занято</text>
                             }

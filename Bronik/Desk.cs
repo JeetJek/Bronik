@@ -2,24 +2,16 @@
 {
     public class Desk
     {
-        public int id;
-        public bool booked;
+        public Int64 number;
+        public List<Order> orders = new List<Order>();
         
-        public Desk(int id)
+        public Desk(Int64 number)
         {
-            this.booked= false;
-            this.id = id;
+            this.number = number;
         }
-        public Desk(int id, bool booked) : this(id)
+        public Desk(Int64 number, List<Order> orders) : this(number)
         {
-            this.booked = booked;
-        }
-        public Desk(int id, bool booked, DateTime from, string name, string phone) : this(id)
-        {
-            this.booked = booked;
-            this.from = from;
-            this.name = name;
-            this.phone = phone;
+            this.orders = orders;
         }
     }
 }
