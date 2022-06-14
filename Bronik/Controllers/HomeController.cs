@@ -13,10 +13,22 @@ namespace Bronik.Controllers
             return View("~/Views/Home/index.cshtml");
         }
         [Route("/Book")]
-        public IActionResult Book(int id,string Name, int number,string tel)
+        public IActionResult Book(int id,string Name, int number,string tel,DateTime date)
         {
-            worker.OpenDesk(id, Name, number, tel,DateTime.Now);
+            worker.OpenDesk(id, Name, number, tel,date);
             return Index();
+        }
+        [Route("/Close")]
+        public IActionResult Close(int id)
+        {
+            worker.CloseOrder(id);
+            return Orders();
+        }
+        [Route("/Orders")]
+        public IActionResult Orders()
+        {
+            ViewBag.Tables = worker.GetTables();
+            return View("~/Views/Home/Orders.cshtml");
         }
     }
 }

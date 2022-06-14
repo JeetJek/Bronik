@@ -54,27 +54,38 @@ public class Worker
         }
         return order;
     }
-    public void CloseDesk(int table)
+    public void CloseOrder(Int64 id)
     {
-        Execute("update tables set state="+0+" where num="+table+";");
-
-        Execute("");
+        var order=GetOrder(id);
+        SQLiteCommand command = new SQLiteCommand();
+        command.CommandText = "insert into order_history('order_id','full_name','quantity','from','to','phone','state') values (@order_id,@full_name,@quantity,@from,@to,@phone,@state)";
+        command.Parameters.AddWithValue("@order_id", id);
+        command.Parameters.AddWithValue("@full_name", order.fullName);
+        command.Parameters.AddWithValue("@quantity", order.quantity);
+        command.Parameters.AddWithValue("@from", order.from);
+        command.Parameters.AddWithValue("@to", DateTime.Now);
+        command.Parameters.AddWithValue("@phone", order.phone);
+        command.Parameters.AddWithValue("@state", "false");
+        Execute(command);
     }
-    
-    public void OpenDesk(int table_num,string name,int clients,string tel,DateTime date)
+
+    public void OpenDesk(int desk_id,string fullName,int quantity,string phone,DateTime from)
     {
-        Execute("update tables set state="+1+" where num="+table_num+";");
-        SQLiteCommand cmd = new SQLiteCommand();
-        cmd.CommandText = "insert into booking('table','fio','num','date','tel','action') values (@table,@fio,@num,@date,@tel,@action);";
-        cmd.Parameters.AddWithValue("@table", table_num);
-        cmd.Parameters.AddWithValue("@fio", name);
-        cmd.Parameters.AddWithValue("@num", clients);
-        cmd.Parameters.AddWithValue("@date", date);
-        cmd.Parameters.AddWithValue("@tel", tel);
-        cmd.Parameters.AddWithValue("@action", 1);
-        Console.WriteLine(cmd.CommandText);
-        Execute(cmd);
-        Console.WriteLine($"Стол {table_num} забронирован {name}");
+        SQLiteCommand command = new SQLiteCommand("insert into 'order'('desk_id') values(@desk_id)");
+        command.Parameters.AddWithValue("@desk_id", desk_id);
+        Execute(command);
+        command.CommandText = "select max(id),id from 'order' where desk_id=@desk_id";
+        DataTable dt = Execute(command);
+
+        command.CommandText = "insert into order_history('order_id','full_name','quantity','from','phone','state') values (@order_id,@full_name,@quantity,@from,@phone,@state)";
+        command.Parameters.AddWithValue("@order_id", (Int64)dt.Rows[0]["id"]);
+        command.Parameters.AddWithValue("@full_name", fullName);
+        command.Parameters.AddWithValue("@quantity", quantity);
+        command.Parameters.AddWithValue("@from", from);
+        command.Parameters.AddWithValue("@phone", phone);
+        command.Parameters.AddWithValue("@state", "true");
+        Execute(command);
+        Console.WriteLine($"Стол {desk_id} забронирован {fullName}");
     }
     public DataTable Execute(string command)
     {

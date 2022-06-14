@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cafe D'athens</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="popups" href="contentpop.html">
+</head>
+<body>
+    <div class="Menu">
+        <header>
+            <em><span>Cafe D'athens</span></em>
+        </header>
+        <br><br>
+        <br>info o cafe<br>
+        @{
+            foreach (Bronik.Desk table in ViewBag.Tables)
+            {
+                <text><br>Стол №@table.number</text>
+                foreach (var order in table.orders)
+                {
+                    if (order.state == true)
+                    {
+                        <text>
+                        <form action="/Close">
+                           <br>Номер заказа:@order.id ФИО:@order.fullName
+                           <input type="hidden" name="id" value="@order.id" />
+                           <input type="submit" value="Закрыть">
+                        </form>
+                        </text> 
+                    } 
+                }
+                <p></p>
+            }
+        }
+    </div>
+</body>
+</html>
