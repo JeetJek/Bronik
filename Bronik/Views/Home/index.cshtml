@@ -76,18 +76,21 @@
                                     <text>Свободно</text>
                             }
                         } </p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[0].number" />
                         <p> Введите ваше имя:
-                            <input type="text" class="text" size="20", required, maxlength="20" >
+                            <input type="text" class="text" size="20" required maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="6", value="1" >
+                            <input type="number" class="text" size="20" required min="1" max="6" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, вместимость до шести человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, вместимость до шести человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -117,18 +120,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[1].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="6", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="6" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, вместимость до шести человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, вместимость до шести человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -158,18 +164,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[2].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="6" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="15", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="15" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, находящийся на летней веранде.    Вместимость до шести человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик с двумя диванами, находящийся на летней веранде.    Вместимость до шести человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -199,18 +208,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[3].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="8", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="8" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик большим диваном, вместимость до восьми человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик большим диваном, вместимость до восьми человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -240,18 +252,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[4].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="4", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="4" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя диванами возле бара, вместимость до четырех человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик с двумя диванами возле бара, вместимость до четырех человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -287,13 +302,13 @@
                                 <input type="text" name="name" class="text" size="20", required, maxlength="20" >
                             </p>
                             <p> Ведите количество человек:
-                                <input type="number" name="number" class="text" size="20", required, min="1", max="4", value="1" >
+                                <input type="number" name="number" class="text" size="20", required, min="1" max="4" value="1" >
                             </p>
                             <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" name="tel" class="text" 
                                 pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                                 <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                            <span style="font-size: 20px;">Комфортный столик с двумя диванами на летней веранде. Вместимость до четырех человек<span>
+                            <span style="font-size: 20px;">Комфортный столик с двумя диванами на летней веранде. Вместимость до четырех человек</span>
                             <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
                         </form>
                     </div>
@@ -329,14 +344,14 @@
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="4", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="4" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя диванами на летней веранде. Вместимость до четырех человек<span>
-                        <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        <span style="font-size: 20px;">Комфортный столик с двумя диванами на летней веранде. Вместимость до четырех человек</span>
+                        <p><input type="submit" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
                     </div>
                 </div>
             </div>
@@ -366,18 +381,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[7].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="2", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="2" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя креслами, вместимость до двух человек<span>
+                        <span style="font-size: 20px;">Комфортный столик с двумя креслами, вместимость до двух человек</span>
                         <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -407,18 +425,21 @@
                                     <text>Свободно</text>
                             }
                         }</p>
+                        <form action="/Book">
+                                <input type="hidden" name="id" value="@ViewBag.Tables[8].number" />
                         <p> Введите ваше имя:
                             <input type="text" class="text" size="20", required, maxlength="20" >
                         </p>
                         <p> Ведите количество человек:
-                            <input type="number" class="text" size="20", required, min="1", max="2", value="1" >
+                            <input type="number" class="text" size="20", required, min="1" max="2" value="1" >
                         </p>
                         <p>Телефон в формате +7-xxx-xx-xx:  <input type="tel" class="text" 
                             pattern="+7[0-9]{3}-[0-9]{2}-[0-9]{2}"></p>
                             <p>Время бронирования:
                                 <input type="datetime-local" name="date" min="09:00" max="23:00"></p>
-                        <span style="font-size: 20px;">Комфортный столик с двумя креслами возле бара, вместимость до двух человек<span>
+                        <span style="font-size: 20px;">Комфортный столик с двумя креслами возле бара, вместимость до двух человек</span>
                         <p><input type="button" value="Забронировать         ➜" style="color:wheat; background-image: linear-gradient(to right, rgb(41, 6, 6),rgb(49, 2, 41));font-size: 35px ; border-radius: 10px 10px 10px 10px; border: 1px solid rgb(44, 1, 35);"> </p>
+                        </form>
                     </div>
                 </div>
             </div>
