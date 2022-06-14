@@ -13,9 +13,9 @@ namespace Bronik.Controllers
             return View("~/Views/Home/index.cshtml");
         }
         [Route("/Book")]
-        public IActionResult Book(int id,string Name, int number,string tel,DateTime date)
+        public IActionResult Book(int id,string name, int number,string tel,DateTime date)
         {
-            worker.OpenDesk(id, Name, number, tel,date);
+            worker.OpenDesk(id, name, number, tel,date);
             return Index();
         }
         [Route("/Close")]

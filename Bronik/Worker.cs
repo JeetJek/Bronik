@@ -76,9 +76,8 @@ public class Worker
         Execute(command);
         command.CommandText = "select max(id),id from 'order' where desk_id=@desk_id";
         DataTable dt = Execute(command);
-
         command.CommandText = "insert into order_history('order_id','full_name','quantity','from','phone','state') values (@order_id,@full_name,@quantity,@from,@phone,@state)";
-        command.Parameters.AddWithValue("@order_id", (Int64)dt.Rows[0]["id"]);
+        command.Parameters.AddWithValue("@order_id", (Int64)dt.Rows[0][0]);
         command.Parameters.AddWithValue("@full_name", fullName);
         command.Parameters.AddWithValue("@quantity", quantity);
         command.Parameters.AddWithValue("@from", from);
@@ -119,6 +118,11 @@ public class Worker
         catch (Exception ex)
         {
             Console.WriteLine("Ошибка при работе с БД: " + ex.ToString());
+            Console.WriteLine(command.CommandText);
+            foreach (SQLiteParameter param in command.Parameters)
+            {
+                Console.WriteLine(param.Value);
+            }
         }
         finally
         {
