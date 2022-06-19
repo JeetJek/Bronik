@@ -20,16 +20,18 @@
                 <text><br>Стол №@table.number</text>
                 foreach (var order in table.orders)
                 {
-                    if (order.state == true)
-                    {
-                        <text>
-                        <form action="/Close">
-                           <br>Номер заказа:@order.id ФИО:@order.fullName
-                           <input type="hidden" name="id" value="@order.id" />
-                           <input type="submit" value="Закрыть">
-                        </form>
-                        </text> 
-                    } 
+                    <text>
+                        <div class="Order" style="font-family:'Times New Roman', Times, serif;font-size:20px">
+                            @if (order.state == true)
+                            {
+                                <form action="/Close">
+                                    <br>Номер заказа:@order.id ФИО:@order.fullName
+                                    <input type="hidden" name="id" value="@order.id" />
+                                    <input type="submit" value="Закрыть">
+                                </form>
+                            }
+                        </div>
+                    </text>
                 }
                 <p></p>
             }
