@@ -39,15 +39,137 @@
             <div style="font-family: 'Amatic SC', cursive; font-size: 110px;transform: rotate(90deg);position: absolute;left: 1100px;top: 280px; color: rgba(94, 6, 6, 0.603);">Cafe D'athens</div>
         </div>
         <div class="activ interer" style="height:800px ; width: 100%; position: relative;z-index: 1; top:-800px;">
-            <div id="731161" style="position: relative;z-index:1;width: 160px; top: 555px; left: 937px; "><a class="popup_link" href="#popup1"><img src="content/table1.png" style="height:175px; width: 170px;position: inherit; transform: rotate(90deg);"></a></div>
-            <div id="731162" style="position: relative;z-index: 1;width: 160px;top: 190px; left: 937px;"><a href="#popup2" class="popup_link"><img src="content/table2.png" style="height:155px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
-            <div id="731164" style="position: relative;z-index: 1;width: 180px; top: 170px; left: 595px;"><a href="#popup4" class="popup_link"><img src="content/table4.png" style="height:230px; width: 230px;position: inherit"></a></div>
-            <div id="731165" style="position: relative;z-index: 1;width: 110px; top: -370px; left: 970px;"><a href="#popup5" class="popup_link"><img src="content/table5.png" style="height:140px; width: 140px;position: relative; transform: rotate(90deg);"></a></div>
-            <div id="731166" style="position: relative;z-index: 1;width: 160px; top: -170px; left: 120px;"><a href="#popup6" class="popup_link"><img src="content/table6.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
-            <div id="731167" style="position: relative;z-index: 1;width: 160px; top: -520px; left: 118px;"><a href="#popup7" class="popup_link"><img src="content/table7.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
-            <div id="731168" style="position: relative;z-index: 1;width: 160px;top: -715px;left: 315px;"><a href="#popup8" class="popup_link"><img src="content/table8.png" style="height:150px; width: 150px;position: relative;transform: rotate(90deg);"></a></div>
-            <div id="731163" style="position: relative;z-index: 1;width: 160px;top: -1050px; left: 140px"><a href="#popup3" class="popup_link"><img src="content/table3.png" style="height:160px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
-            <div id="731169" style="position: relative;z-index: 1;width: 160px; top: -1090px; left: 570px"><a href="#popup9" class="popup_link"><img src="content/table9.png" style="height:160px; width: 160px;position: inherit"></a></div>
+            @{
+                int open = 0;
+                foreach (var order in ViewBag.Tables[0].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731161" style="position: relative;z-index:1;width: 160px; top: 555px; left: 937px; "><a class="popup_link" href="#popup1"><img src="content/table1-R.png" style="height:175px; width: 170px;position: inherit; transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731161" style="position: relative;z-index:1;width: 160px; top: 555px; left: 937px; "><a class="popup_link" href="#popup1"><img src="content/table1.png" style="height:175px; width: 170px;position: inherit; transform: rotate(90deg);"></a></div>
+                }
+
+                open = 0;
+                foreach (var order in ViewBag.Tables[1].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731162" style="position: relative;z-index: 1;width: 160px;top: 190px; left: 937px;"><a href="#popup2" class="popup_link"><img src="content/table2-R.png" style="height:155px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
+                    
+                }
+                else
+                {
+                    <div id="731162" style="position: relative;z-index: 1;width: 160px;top: 190px; left: 937px;"><a href="#popup2" class="popup_link"><img src="content/table2.png" style="height:155px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[3].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731164" style="position: relative;z-index: 1;width: 180px; top: 170px; left: 595px;"><a href="#popup4" class="popup_link"><img src="content/table4-R.png" style="height:230px; width: 230px;position: inherit"></a></div>
+                }
+                else
+                {
+                    <div id="731164" style="position: relative;z-index: 1;width: 180px; top: 170px; left: 595px;"><a href="#popup4" class="popup_link"><img src="content/table4.png" style="height:230px; width: 230px;position: inherit"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[4].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731165" style="position: relative;z-index: 1;width: 110px; top: -370px; left: 970px;"><a href="#popup5" class="popup_link"><img src="content/table5-R.png" style="height:140px; width: 140px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731165" style="position: relative;z-index: 1;width: 110px; top: -370px; left: 970px;"><a href="#popup5" class="popup_link"><img src="content/table5.png" style="height:140px; width: 140px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[5].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731166" style="position: relative;z-index: 1;width: 160px; top: -170px; left: 120px;"><a href="#popup6" class="popup_link"><img src="content/table6-R.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731166" style="position: relative;z-index: 1;width: 160px; top: -170px; left: 120px;"><a href="#popup6" class="popup_link"><img src="content/table6.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                
+                open = 0;
+                foreach (var order in ViewBag.Tables[6].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731167" style="position: relative;z-index: 1;width: 160px; top: -520px; left: 118px;"><a href="#popup7" class="popup_link"><img src="content/table7-R.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731167" style="position: relative;z-index: 1;width: 160px; top: -520px; left: 118px;"><a href="#popup7" class="popup_link"><img src="content/table7.png" style="height:150px; width: 150px;position: relative; transform: rotate(90deg);"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[7].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731168" style="position: relative;z-index: 1;width: 160px;top: -715px;left: 315px;"><a href="#popup8" class="popup_link"><img src="content/table8-R.png" style="height:150px; width: 150px;position: relative;transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731168" style="position: relative;z-index: 1;width: 160px;top: -715px;left: 315px;"><a href="#popup8" class="popup_link"><img src="content/table8.png" style="height:150px; width: 150px;position: relative;transform: rotate(90deg);"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[2].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731163" style="position: relative;z-index: 1;width: 160px;top: -1050px; left: 140px"><a href="#popup3" class="popup_link"><img src="content/table3-R.png" style="height:160px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
+                }
+                else
+                {
+                    <div id="731163" style="position: relative;z-index: 1;width: 160px;top: -1050px; left: 140px"><a href="#popup3" class="popup_link"><img src="content/table3.png" style="height:160px; width: 160px;position: inherit; transform: rotate(90deg);"></a></div>
+                }
+                open = 0;
+                foreach (var order in ViewBag.Tables[8].orders)
+                {
+                    if (order.state == true)
+                    open++;
+                }
+                if (open > 0)
+                {
+                    <div id="731169" style="position: relative;z-index: 1;width: 160px; top: -1090px; left: 570px"><a href="#popup9" class="popup_link"><img src="content/table9-R.png" style="height:160px; width: 160px;position: inherit"></a></div>
+                }
+                else
+                {
+                    <div id="731169" style="position: relative;z-index: 1;width: 160px; top: -1090px; left: 570px"><a href="#popup9" class="popup_link"><img src="content/table9.png" style="height:160px; width: 160px;position: inherit"></a></div>
+                }
+            }
         </div>
 
     </div>
@@ -56,25 +178,25 @@
             <div class="infowindow_content">
                 <a href="#table" class="infowindow_close close-popup">X</a>
                 <div class="infowindow_title">Стол №1</div>
+                
                 <div class="infowindow_pic"><img src="content/PhT1.jpg" alt="table1" style="height:200px; width:300px; position: relative;left: 30px; "></div>
                 <div class="infowindow_text">
                     <p>Вместимость: 6 человек</p>
                     <p>
                         Состояние стола:
                         @{
-                            int open = 0;
                             foreach (var order in ViewBag.Tables[0].orders)
                             {
                                 if (order.state == true)
-                                    open++;
+                                open++;
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -122,11 +244,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -174,11 +296,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -226,11 +348,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -278,11 +400,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -330,11 +452,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -382,11 +504,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -432,11 +554,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
@@ -484,11 +606,11 @@
                             }
                             if (open > 0)
                             {
-                                <text>Занято</text>
+                                    <text>Занято</text>
                             }
                             else
                             {
-                                <text>Свободно</text>
+                                    <text>Свободно</text>
                             }
                         }
                     </p>
