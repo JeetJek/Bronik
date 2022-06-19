@@ -7,13 +7,20 @@ body {
     background-image: linear-gradient(to right, rgb(247, 169, 169), rgb(241, 203, 145));
 }
 
+h1 {
+    font-size: 30px;
+    padding-top: 40px;
+    color: rgb(65, 41, 9);
+    text-decoration: none;
+}
+
 header {
     position: fixed;
     background-color: #a7838317;
     text-align: left;
     color: #400e01c7;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 10 px;
+    padding-bottom: 10 px;
     padding-right: 52px;
     padding: 10px;
     font-size: 80px;
